@@ -1,0 +1,77 @@
+.nav-item a.active {
+    font-weight:bold;
+}
+/* 카드 */
+#movie_card {
+    width:15rem;
+    height:26.578rem;
+}
+/* 포스터 */
+#poster {
+    width:15rem;
+    height:21.428rem;
+    border-radius: 2.5%;
+}
+/* 박스오피스 순위 */
+.rank_num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0%;
+    left: 5%;
+    font-size: 3rem;
+    font-style:italic;
+    color: white;
+    -webkit-text-stroke: 1px black;
+}
+/* 영화 등급 아이콘 */
+.rating_circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width:2rem;
+    height:2rem;
+    border-radius: 50%;
+}
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight:bold;
+    color: white;
+}
+/* 영화 제목 */
+#movie_name {
+    margin:0;
+    font-size: 1.1rem;
+    font-weight:bold;
+    color: black;
+}
+/* 영화 정보 */
+.open_date
+.audi_acc {
+    margin:0;
+    font-size: 0.9rem;
+    color: gray;
+}
+/* video-slider */
+.carousel-inner {
+    width:720px;
+    padding-bottom: 5rem;
+}
+.carousel-caption {
+    position : absolute;
+    bottom : -4rem;
+}
+.modal-content {
+    background-color: black;
+}
+.modal-title {
+    color:white;
+}
+

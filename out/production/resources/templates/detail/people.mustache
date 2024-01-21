@@ -1,0 +1,55 @@
+{{>layouts/header}}
+{{#people}}
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <div class="container">
+                    <h2>
+                        <bold>{{peopleNm}}</bold>
+                    </h2>
+                    <span>{{peopleNmEn}}</span>
+                    <table class="table table-borderless">
+                        <tbody>
+                        <tr>
+                            <th scope="row">성별</th>
+                            <td>{{sex}}</td>
+                            <th scope="row">직업</th>
+                            <td>{{repRoleNm}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>필모그래피</h2>
+        <div class="row row-cols-1 row-cols-md-5">
+            {{#filmos}}
+                <div class="col">
+                    <div class="card mb-3" style="max-width: 580px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <a href="/detail/movie/{{movieId}}"><img
+                                        src="{{mainPoster}}"
+                                        class="img-fluid rounded-start" alt="..."></a>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <strong><a href="/detail/movie/{{movieId}}"
+                                               class="card-title">{{movieNm}}</a></strong>
+                                    <p class="card-text">{{role}}</p>
+                                    <dl class="desc_info">
+                                        <dt>개봉일</dt>
+                                        <dd>{{releaseDate}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/filmos}}
+        </div>
+    </div>
+{{/people}}
+{{>layouts/footer}}

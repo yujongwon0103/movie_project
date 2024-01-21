@@ -1,0 +1,55 @@
+{{>layouts/header}}
+{{#company}}
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <div class="container">
+                    <h2>
+                        <bold>{{companyNm}}</bold>
+                    </h2>
+                    <span>{{companyNmEn}}</span>
+                    <table class="table table-borderless">
+                        <tbody>
+                        <tr>
+                            <th scope="row">분류</th>
+                            <td>{{companyPartNames}}</td>
+                            <th scope="row">대표자</th>
+                            <td>{{ceoNm}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>필모그래피</h2>
+        <div class="row row-cols-1 row-cols-md-5">
+            {{#filmos}}
+                <div class="col">
+                    <div class="card mb-3" style="max-width: 580px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <a href="/detail/movie/{{movieId}}"><img
+                                        src="{{mainPoster}}"
+                                        class="img-fluid rounded-start" alt="..."></a>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <strong><a href="/detail/movie/{{movieId}}"
+                                               class="card-title">{{movieNm}}</a></strong>
+                                    <p class="card-text">{{role}}</p>
+                                    <dl class="desc_info">
+                                        <dt>개봉일</dt>
+                                        <dd>{{releaseDate}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/filmos}}
+        </div>
+    </div>
+{{/company}}
+{{>layouts/footer}}

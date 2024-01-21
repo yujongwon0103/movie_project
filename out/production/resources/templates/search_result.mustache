@@ -1,0 +1,131 @@
+{{>layouts/header}}
+<div class="container">
+    <h1>'{{search}}'검색결과</h1>
+    <div class="container">
+        <ul class="nav nav-underline" id="tab">
+            <li class="nav-item" id="tab-item">
+                <a class="nav-link link-dark" id="total" href="#tab1">전체</a>
+            </li>
+            <li class="nav-item" id="tab-item">
+                <a class="nav-link link-dark" id="movie" href="#tab2">영화</a>
+            </li>
+            <li class="nav-item" id="tab-item">
+                <a class="nav-link link-dark" id="people" href="#tab3">영화인</a>
+            </li>
+            <li class="nav-item" id="tab-item">
+                <a class="nav-link link-dark" id="company" href="#tab4">영화사</a>
+            </li>
+        </ul>
+    </div>
+    <div class="page-inner">
+        <div class="page-section" id="tab2">
+            <h2>영화 <span>{{movieCnt}}</span>개</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {{#movieList}}
+                    <div class="col">
+                        <div class="card">
+                            <div class="row g-0">
+                                <div class="col-md-8">
+                                    <a href="/detail/movie/{{movieId}}">
+                                        <img src="{{mainPoster}}" class="img-fluid rounded-start" alt="...">
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card-body">
+                                        <strong><a href="/detail/movie/{{movieId}}"
+                                                   class="card-title">{{titleKor}}</a></strong>
+                                        <p class="card-text" style="color:gray;font-size:0.8rem;">{{titleEng}}</p>
+                                        <dl class="desc_info">
+                                            <dt>개봉</dt>
+                                            <dd>{{releaseDate}}</dd>
+                                        </dl>
+                                        <dl class="desc_info">
+                                            <dt>장르</dt>
+                                            <dd>{{genre}}</dd>
+                                        </dl>
+                                        <dl class="desc_info">
+                                            <dt>등급</dt>
+                                            <dd>{{rating}}</dd>
+                                        </dl>
+                                        <dl class="desc_info">
+                                            <dt>러닝 타임</dt>
+                                            <dd>{{runtime}}분</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/movieList}}
+            </div>
+        </div>
+        <div class="page-section" id="tab3">
+            <h2>영화인 <span>{{peopleCnt}}</span>명</h2>
+            <div class="row row-cols-1 row-cols-md-5">
+                {{#peopleList}}
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <a href="/detail/people/{{peopleCd}}" id="peopleNm">
+                                    <strong>{{peopleNm}}</strong>
+                                </a>
+                                <span id="peopleNmEn" style="color:gray">{{peopleNmEn}}</span>
+                            </div>
+                            <dl class="desc_info">
+                                <dt>대표 분야</dt>
+                                <dd style="color:gray">{{repRoleNm}}</dd>
+                            </dl>
+                            <dl class="desc_info">
+                                <dt>필모그래피</dt>
+                                <dd>
+                                    <ul class="list-group">
+                                        {{#filmoNames}}
+                                            <li class="list-group-item">{{.}}</li>
+                                        {{/filmoNames}}
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                {{/peopleList}}
+            </div>
+        </div>
+        <div class="page-section" id="tab4">
+            <h2>영화사 <span>{{companyCnt}}</span>개</h2>
+            <div class="row row-cols-1 row-cols-md-5">
+                {{#companyList}}
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <a href="/detail/company/{{companyCd}}" id="companyNm">
+                                    <strong>{{companyNm}}</strong>
+                                </a>
+                                <span id="companyNmEn" style="color:gray">{{companyNmEn}}</span>
+                            </div>
+                            <dl class="desc_info">
+                                <dt>분야</dt>
+                                <dd>{{companyPartNames}}</dd>
+                            </dl>
+                            <dl class="desc_info">
+                                <dt>대표 (CEO)</dt>
+                                <dd>{{ceoNm}}</dd>
+                            </dl>
+                            <dl class="desc_info">
+                                <dt>필모그래피</dt>
+                                <dd>
+                                    <ul class="list-group">
+                                        {{#filmoNames}}
+                                            <li class="list-group-item">{{.}}</li>
+                                        {{/filmoNames}}
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                {{/companyList}}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/search_result.js"></script>
+{{>layouts/footer}}
